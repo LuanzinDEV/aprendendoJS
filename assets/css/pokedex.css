@@ -86,6 +86,26 @@
 .type.steel     { background: #B8B8D0; }
 .type.fairy     { background: #FFB7FF; }
 
+/* Estilo do card principal baseado no primeiro tipo */
+.pokemon.normal    { background: linear-gradient(to bottom, #DCDCDC, #BDBDBD); }
+.pokemon.fire      { background: linear-gradient(to bottom, #FF8C69, #F05030); }
+.pokemon.water     { background: linear-gradient(to bottom, #58ABF6, #3899F8); }
+.pokemon.electric  { background: linear-gradient(to bottom, #FFE066, #FFD700); }
+.pokemon.grass     { background: linear-gradient(to bottom, #8BD674, #78C850); }
+.pokemon.ice       { background: linear-gradient(to bottom, #A0F1FF, #58F0F8); }
+.pokemon.fighting  { background: linear-gradient(to bottom, #FF6B6B, #C03028); }
+.pokemon.poison    { background: linear-gradient(to bottom, #D291FF, #A040A0); }
+.pokemon.ground    { background: linear-gradient(to bottom, #F4E7DA, #E0C068); }
+.pokemon.flying    { background: linear-gradient(to bottom, #B2B6F7, #A890F0); }
+.pokemon.psychic   { background: linear-gradient(to bottom, #FFAAC9, #FF5999); }
+.pokemon.bug       { background: linear-gradient(to bottom, #C3CE75, #A8B820); }
+.pokemon.rock      { background: linear-gradient(to bottom, #D8C07A, #B8A038); }
+.pokemon.ghost     { background: linear-gradient(to bottom, #A292BC, #705898); }
+.pokemon.dragon    { background: linear-gradient(to bottom, #A27BEF, #7038F8); }
+.pokemon.dark      { background: linear-gradient(to bottom, #A1A1A1, #705848); }
+.pokemon.steel     { background: linear-gradient(to bottom, #CCCCDE, #B8B8D0); }
+.pokemon.fairy     { background: linear-gradient(to bottom, #FFD1F0, #FFB7FF); }
+
 .pokemon .detail img {
     max-width: 100px;
     height: auto;

@@ -1,4 +1,7 @@
-
+const pokemonList = document.getElementById('pokemonList');
+const botaoLoad = document.getElementById('loadMoreButton');
+const limit = 9
+let offset = 0
 
 function convertPokemonToLI(pokemonTypes){
     return pokemonTypes.map((typeSlot) => `<li class="type ${typeSlot.type.name}"> ${typeSlot.type.name}</li>`)
@@ -6,8 +9,8 @@ function convertPokemonToLI(pokemonTypes){
 
 function convertPokemonToHTML(pokemon) {
     return `
-        <li class="pokemon">
-            <span class="number">#${pokemon.order}</span>
+        <li class="pokemon ${pokemon.types[0].type.name}">
+            <span class="number">#${pokemon.id}</span>   
             <span class="name">${pokemon.name}</span>              
             <div class="detail">
                 <ol class="types">
@@ -18,19 +21,20 @@ function convertPokemonToHTML(pokemon) {
     `
 }
 
-const pokemonList = document.getElementById('pokemonList');
-
-const botaoLoad = document.getElementById('loadMoreButton');
+pokeApi.getPokemons(offset, limit).then( (pokemons) => {
+    pokemonList.innerHTML += pokemons.map(pokemon => convertPokemonToHTML(pokemon)).join('')
+})
 
 botaoLoad.addEventListener("click", function() {
-
+    offset += limit;
+    pokeApi.getPokemons(offset, limit).then( (pokemons) => {
+        pokemonList.innerHTML += pokemons.map(pokemon => convertPokemonToHTML(pokemon)).join('')
+    })
 }
 
 );
 
 
-pokeApi.getPokemons().then( (pokemons) => {
-    pokemonList.innerHTML += pokemons.map(pokemon => convertPokemonToHTML(pokemon)).join('')
-})
+
 
 
